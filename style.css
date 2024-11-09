@@ -1,0 +1,31 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-section {
+    margin-bottom: 20px;
+}
+
+.morph-input {
+    margin-top: 10px;
+}
+
+.morph-section {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.morph_element {
+    text-align: center;
+}
+
+canvas {
+    border: 1px solid #ccc;
+    width: 1420px;
+    height: 720px;
+}

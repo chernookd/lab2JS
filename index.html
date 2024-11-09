@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Морфологическая обработка</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div class="input-section">
+    <label for="image_uploads">Загрузите изображение (PNG, JPG):</label>
+    <input type="file" id="image_uploads" accept=".jpg, .jpeg, .png" />
+    <div class="morph-input">
+        <label for="structure-element">Выберите структурный элемент:</label>
+        <select id="structure-element">
+            <option value="rect">Прямоугольник</option>
+            <option value="cross" selected>Крест</option>
+            <option value="ell">Эллипс</option>
+            <option value="diamond">Ромб "5 x 5"</option>
+        </select>
+
+        <label for="kernel-size">Размер ядра:</label>
+        <input type="text" id="kernel-size" value="5">
+        <button id="morphology-button">Показать результат</button>
+    </div>
+</div>
+
+<div class="morph-section">
+    <div class="morph_element">
+        <p>Исходное</p>
+        <canvas id="output_start"></canvas>
+    </div>
+
+    <div class="morph_element">
+        <p>Эрозия</p>
+        <canvas id="output_er"></canvas>
+    </div>
+    <div class="morph_element">
+        <p>Дилатация</p>
+        <canvas id="output_dil"></canvas>
+    </div>
+    <div class="morph_element">
+        <p>Открытие</p>
+        <canvas id="output_op"></canvas>
+    </div>
+    <div class="morph_element">
+        <p>Закрытие</p>
+        <canvas id="output_close"></canvas>
+    </div>
+
+
+    <div class="morph_element">
+        <p>Минимальный фильтр</p>
+        <canvas id="min-filter"></canvas>
+    </div>
+    <div class="morph_element">
+        <p>Максимальный фильтр</p>
+        <canvas id="max-filter"></canvas>
+    </div>
+    <div class="morph_element">
+        <p>Медианный фильтр</p>
+        <canvas id="median-filter"></canvas>
+    </div>
+</div>
+
+<script src="https://docs.opencv.org/3.4.0/opencv.js" type="text/javascript"></script>
+<script src="https://www.lactame.com/lib/image-js/0.21.2/image.min.js"></script>
+
+<script src="script.js"></script>
+</body>
+
+</html>
